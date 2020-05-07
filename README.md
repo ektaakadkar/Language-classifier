@@ -1,6 +1,12 @@
 # Language-classifier
  Language classifier using ‘Decision Tree’ and ‘Adaboost algorithm’ to classify the given set of lines into Dutch and English. Accuracy : 98 %  
- 
+
+Description of the decision tree learning, how you came up with the best parameters and your own testing results - 
+The decision tree learning algorithm is based on the information gain of each attribute. The attribute having the highest information gain is selected as the root node. This process is iterated till all the attributes within the tree are used. That means the tree root value consists of the attribute. Then the respective tree will not have that attribute in it’s nodes. The entire decision tree is saved in the bi-directional graph structure (tree). The most powerful attribute is selected as the root node and in the later levels of the tree the attributes having the highest information gain excluding the parent node attributes is selected. The leaf nodes of the tree consists of classes ‘en’ and ‘nl’. Here, ‘en’ represents English language and ‘nl’ represents Dutch language. 
+
+Description of the boosting, how many trees turned out to be useful, and your own testing -  
+The attributes which are more powerful were only selected by the Adaboost algorithm. The hypothesis weight of the powerful attribute was also more compared to other attribute hypothesis weight. Out of the total attributes, the attributes which are more powerful were repeatedly chosen. From my attribute list, attributes such as “frequent dutch words”, “frequent english words”, “whether it contains ‘het’ or ‘de’ “ were selected repeatedly. The error rate for each hypothesis decreases as we proceed. The examples which are wrongly classified are allocated more weight and this weight is taken into consideration while calculating entropy. The attribute having highest information gain will be selected. As the wrongly classified examples have more weight they are taken more into consideration as per the algorithm.   
+
 Description of your features and how you chose them – 
 For English I have taken the attribute value as ‘True’ and for Dutch I have taken the attribute value as ‘False’. 
 I have selected 10 features in total which was the given least requirement. 
@@ -25,9 +31,3 @@ The pronouns would make a powerful set of attributes. So a list of pronouns used
 A list of pronouns used in Dutch  was made separately and this list was used to check the input. If the input contains a word from the given list then it returns ‘False’ otherwise it returns ‘True’ 
 10.Letter z: 
 The input in Dutch has more z letters than the input in English. Thus, if the input contains more than 1 z letter then it is classified as Dutch and returns ‘False’ otherwise it returns ‘True’. 
-
-Description of the decision tree learning, how you came up with the best parameters and your own testing results - 
-The decision tree learning algorithm is based on the information gain of each attribute. The attribute having the highest information gain is selected as the root node. This process is iterated till all the attributes within the tree are used. That means the tree root value consists of the attribute. Then the respective tree will not have that attribute in it’s nodes. The entire decision tree is saved in the bi-directional graph structure (tree). The most powerful attribute is selected as the root node and in the later levels of the tree the attributes having the highest information gain excluding the parent node attributes is selected. The leaf nodes of the tree consists of classes ‘en’ and ‘nl’. Here, ‘en’ represents English language and ‘nl’ represents Dutch language. 
-
-Description of the boosting, how many trees turned out to be useful, and your own testing -  
-The attributes which are more powerful were only selected by the Adaboost algorithm. The hypothesis weight of the powerful attribute was also more compared to other attribute hypothesis weight. Out of the total attributes, the attributes which are more powerful were repeatedly chosen. From my attribute list, attributes such as “frequent dutch words”, “frequent english words”, “whether it contains ‘het’ or ‘de’ “ were selected repeatedly. The error rate for each hypothesis decreases as we proceed. The examples which are wrongly classified are allocated more weight and this weight is taken into consideration while calculating entropy. The attribute having highest information gain will be selected. As the wrongly classified examples have more weight they are taken more into consideration as per the algorithm.   
