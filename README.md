@@ -1,5 +1,5 @@
 # Language-classifier
- Language classifier using ‘Decision Tree’ and ‘Adaboost algorithm’ to classify the given set of lines into Dutch and English. Accuracy : 98 %  
+ Language classifier using ‘Decision Tree’ and ‘Adaboost algorithm’ to classify the given set of lines into Dutch and English. Accuracy : 92 %  
 
 Description of the decision tree learning, how you came up with the best parameters and your own testing results - 
 The decision tree learning algorithm is based on the information gain of each attribute. The attribute having the highest information gain is selected as the root node. This process is iterated till all the attributes within the tree are used. That means the tree root value consists of the attribute. Then the respective tree will not have that attribute in it’s nodes. The entire decision tree is saved in the bi-directional graph structure (tree). The most powerful attribute is selected as the root node and in the later levels of the tree the attributes having the highest information gain excluding the parent node attributes is selected. The leaf nodes of the tree consists of classes ‘en’ and ‘nl’. Here, ‘en’ represents English language and ‘nl’ represents Dutch language. 
